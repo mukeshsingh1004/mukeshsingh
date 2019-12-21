@@ -4,5 +4,8 @@
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
     "WEBSITE_SITE_NAME": "mukeshsingh",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true"
+  },
+  "Host": {
+    "CORS": "*"
   }
 }

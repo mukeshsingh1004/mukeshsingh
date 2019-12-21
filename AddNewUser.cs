@@ -13,8 +13,8 @@ namespace mukeshsingh
         [FunctionName("AddNewUser")]
         public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
         HttpRequestMessage req, 
-        [Queue ("users")] IAsyncCollector<User> userQueue,
-        [Table ("user")] IAsyncCollector<User> usertable,
+        [Queue ("UsersQueue")] IAsyncCollector<User> userQueue,
+        [Table ("UsersTable")] IAsyncCollector<User> usertable,
         TraceWriter log)
         {
             log.Info("C# HTTP trigger function processed a request.");
@@ -23,9 +23,11 @@ namespace mukeshsingh
             var body = await req.Content.ReadAsStringAsync();
             log.Info(body);
             var user = JsonConvert.DeserializeObject<User>(body);
+
+            log.Info($"UserId: {user.Id}");
             await userQueue.AddAsync(user);
 
-            user.PartitionKey = "users";
+            user.PartitionKey = "userstable";
             user.RowKey = user.Id;
             await usertable.AddAsync(user);
 

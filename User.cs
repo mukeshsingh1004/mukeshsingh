@@ -1,6 +1,8 @@
-﻿namespace mukeshsingh
+﻿using Microsoft.WindowsAzure.Storage.Table;
+
+namespace mukeshsingh
 {
-    public class User
+    public class User: TableEntity
     {
         public string PartitionKey { get; set; }
         public string RowKey { get; set; }
