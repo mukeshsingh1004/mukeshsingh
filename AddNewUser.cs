@@ -27,7 +27,7 @@ namespace mukeshsingh
             log.Info($"UserId: {user.Id}");
             await userQueue.AddAsync(user);
 
-            user.PartitionKey = "userstable";
+            user.PartitionKey = "user";
             user.RowKey = user.Id;
             await usertable.AddAsync(user);
 
