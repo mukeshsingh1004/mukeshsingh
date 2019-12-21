@@ -29,6 +29,7 @@ namespace mukeshsingh
 
             user.PartitionKey = "user";
             user.RowKey = user.Id;
+            log.Info($"UserPartitionKey: {user.PartitionKey}");
             await usertable.AddAsync(user);
 
             log.Info($"User {user.Name} Sucessfully added");
