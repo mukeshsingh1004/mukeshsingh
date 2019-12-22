@@ -9,7 +9,7 @@ namespace mukeshsingh
     public static class ProcessUsersQueue
     {
         [FunctionName("ProcessUsersQueue")]
-        public static async Task Run([QueueTrigger("users", Connection = "AzureWebJobsStorage")]User user, 
+        public static async Task Run([QueueTrigger("usersqueue", Connection = "AzureWebJobsStorage")]User user, 
             IBinder binder,
             TraceWriter log)
         {

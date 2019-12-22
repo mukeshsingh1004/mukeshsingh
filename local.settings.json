@@ -5,7 +5,7 @@
     "WEBSITE_SITE_NAME": "mukeshsingh",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true"
   },
-  "Host": {
-    "CORS": "*"
+  "host": {
+    "CORS":  "*"
   }
 }
