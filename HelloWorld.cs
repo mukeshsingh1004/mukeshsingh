@@ -11,7 +11,7 @@ namespace mukeshsingh
         [FunctionName("HelloWorld")]
         public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.Function, "get")]HttpRequestMessage req, TraceWriter log)
         {
-            return req.CreateResponse(HttpStatusCode.OK, "Hellow from Azure Functions.");
+            return req.CreateResponse(HttpStatusCode.OK, "Hello from Azure Functions.");
         }
 
     }
